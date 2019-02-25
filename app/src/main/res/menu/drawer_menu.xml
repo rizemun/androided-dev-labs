@@ -9,7 +9,7 @@
         android:title="Сохраненные города" />
     <item
         android:id="@+id/my_item3"
-        android:title="Погода" />
+        android:title="Погода в выбранном городе" />
     <item
         android:id="@+id/my_item4"
         android:title="об Авторе" />

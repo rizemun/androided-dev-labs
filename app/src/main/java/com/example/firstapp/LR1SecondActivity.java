@@ -16,32 +16,11 @@ public class LR1SecondActivity extends AppCompatActivity {
 
     private DrawerLayout mDrawerLayout;
 
-    private void CreateFragment(String color){
-        FragmentManager fragmentManager = getFragmentManager();
-        FragmentTransaction fragmentTransaction =
-                fragmentManager.beginTransaction();
-        Fragment fragment = new lab02Fragment();
-
-        Bundle args = new Bundle();
-        args.putString("color", color);
-        fragment.setArguments(args);
-
-        fragmentTransaction.replace(R.id.fragmentPos, fragment);
-        fragmentTransaction.commit();
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lr1_second);
-
-        TextView myText = findViewById(R.id.textView2);
-        Intent intent = getIntent();
-        String name = intent.getStringExtra("name");
-
-        myText.setText(name);
-
-
 
         mDrawerLayout = findViewById(R.id.my_drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
@@ -49,27 +28,97 @@ public class LR1SecondActivity extends AppCompatActivity {
 
         navigationView.setCheckedItem(R.id.my_item3);
 
-        CreateFragment("cyan");
+
+        FragmentManager fragmentManager;
+        FragmentTransaction fragmentTransaction;
+        Bundle args;
+        Fragment fragment;
+
+        fragmentManager = getFragmentManager();
+        fragmentTransaction =
+                fragmentManager.beginTransaction();
+
+        args = new Bundle();
+        args.putString("color", "cyan");
+        fragment = new lab02Fragment3();
+        fragment.setArguments(args);
+
+        fragmentTransaction.replace(R.id.fragmentPos, fragment);
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
+
+
+
+
 
         navigationView.setNavigationItemSelectedListener(
             new NavigationView.OnNavigationItemSelectedListener() {
                 @Override
                 public boolean onNavigationItemSelected(MenuItem menuItem) {
-
+                    FragmentManager fragmentManager;
+                    FragmentTransaction fragmentTransaction;
+                    Bundle args;
+                    Fragment fragment;
 
                     switch(menuItem.getItemId()){
                         case R.id.my_item1:
+                            fragmentManager = getFragmentManager();
+                            fragmentTransaction =
+                                    fragmentManager.beginTransaction();
 
-                            CreateFragment("blue");
+                            args = new Bundle();
+                            args.putString("color", "blue");
+                            fragment = new lab02Fragment();
+                            fragment.setArguments(args);
+
+                            fragmentTransaction.replace(R.id.fragmentPos, fragment);
+                            fragmentTransaction.addToBackStack(null);
+                            fragmentTransaction.commit();
                             break;
                         case R.id.my_item2:
-                            CreateFragment("green");
+                            fragmentManager = getFragmentManager();
+                            fragmentTransaction =
+                                    fragmentManager.beginTransaction();
+
+                            args = new Bundle();
+                            args.putString("color", "green");
+                            fragment = new lab02Fragment2();
+                            fragment.setArguments(args);
+
+                            fragmentTransaction.replace(R.id.fragmentPos, fragment);
+                            fragmentTransaction.addToBackStack(null);
+                            fragmentTransaction.commit();
+
                             break;
                         case R.id.my_item3:
-                            CreateFragment("cyan");
+                            fragmentManager = getFragmentManager();
+                            fragmentTransaction =
+                                    fragmentManager.beginTransaction();
+
+                            args = new Bundle();
+                            args.putString("color", "cyan");
+                            fragment = new lab02Fragment3();
+                            fragment.setArguments(args);
+
+                            fragmentTransaction.replace(R.id.fragmentPos, fragment);
+                            fragmentTransaction.addToBackStack(null);
+                            fragmentTransaction.commit();
+
                             break;
                         case R.id.my_item4:
-                            CreateFragment("purple");
+                            fragmentManager = getFragmentManager();
+                            fragmentTransaction =
+                                    fragmentManager.beginTransaction();
+
+                            args = new Bundle();
+                            args.putString("color", "purple");
+                            fragment = new lab02Fragment4();
+                            fragment.setArguments(args);
+
+                            fragmentTransaction.replace(R.id.fragmentPos, fragment);
+                            fragmentTransaction.addToBackStack(null);
+                            fragmentTransaction.commit();
+
                             break;
                     }
 
