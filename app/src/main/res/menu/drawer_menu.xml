@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+<group android:checkableBehavior="single">
+    <item
+        android:id="@+id/my_item1"
+        android:title="Выбрать город" />
+    <item
+        android:id="@+id/my_item2"
+        android:title="Сохраненные города" />
+    <item
+        android:id="@+id/my_item3"
+        android:title="Погода" />
+    <item
+        android:id="@+id/my_item4"
+        android:title="об Авторе" />
+</group>
+</menu>
