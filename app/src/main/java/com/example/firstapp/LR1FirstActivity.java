@@ -19,9 +19,8 @@ public class LR1FirstActivity extends AppCompatActivity {
 
     public void onBut1Click(View view){
         EditText nameElem = findViewById(R.id.editText2);
-        String name = nameElem.getText().toString();
         Intent intent = new Intent(this, LR1SecondActivity.class);
-        intent.putExtra("name", name);
+        intent.putExtra("isFirst", "yes");
         startActivity(intent);
     }
 
