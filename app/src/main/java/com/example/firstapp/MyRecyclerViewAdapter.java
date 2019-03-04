@@ -1,5 +1,6 @@
 package com.example.firstapp;
 
+import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -46,7 +47,31 @@ public class MyRecyclerViewAdapter extends
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
-        holder.mTextView.setText(mDataset.get(position));
+        String text = mDataset.get(position);
+        String text2 = mDataset1.get(position);
+        String text3 = mDataset1.get(position);
+
+
+
+
+        holder.mTextView.setText(text);
+        holder.mTextView2.setText(text2);
+        holder.mTextView3.setText(text3);
+
+
+
+        if(text.length() <= 11) {
+            holder.mTextView.setTextColor(Color.parseColor("green"));
+        }
+        else if(text.length() == 12) {
+            holder.mTextView.setTextColor(Color.parseColor("blue"));
+        }
+        else if(text.length() == 13) {
+            holder.mTextView.setTextColor(Color.parseColor("red"));
+        }
+        else if(text.length() == 14) {
+            holder.mTextView.setTextColor(Color.parseColor("purple"));
+        }
     }
 
     @Override

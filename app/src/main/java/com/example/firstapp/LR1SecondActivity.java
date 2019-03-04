@@ -47,13 +47,13 @@ public class LR1SecondActivity extends AppCompatActivity {
 
 
         if (ActivityCompat.checkSelfPermission(this,
-                Manifest.permission.ACCESS_COARSE_LOCATION) !=
+                Manifest.permission.ACCESS_FINE_LOCATION) !=
                 PackageManager.PERMISSION_GRANTED) {
             if (!ActivityCompat.shouldShowRequestPermissionRationale(this,
-                    Manifest.permission.ACCESS_COARSE_LOCATION)) {
+                    Manifest.permission.ACCESS_FINE_LOCATION)) {
                 ActivityCompat.requestPermissions(this,
                         new
-                                String[]{Manifest.permission.ACCESS_COARSE_LOCATION},
+                                String[]{Manifest.permission.ACCESS_FINE_LOCATION},
                         1);
 
                 Log.i("Location permission", "some text not started location");

@@ -16,16 +16,44 @@
 
     <string-array name="recycler_data">
         <item>My string 1</item>
+        <item>My string 11</item>
+        <item>My string 111</item>
+        <item>My string 1111</item>
         <item>My string 2</item>
+        <item>My string 22</item>
+        <item>My string 222</item>
+        <item>My string 2222</item>
         <item>My string 3</item>
+        <item>My string 33</item>
+        <item>My string 333</item>
+        <item>My string 3333</item>
         <item>My string 4</item>
-        <item>My string 5</item>
-        <item>My string 6</item>
-        <item>My string 7</item>
-        <item>My string 8</item>
-        <item>My string 9</item>
-        <item>My string 10</item>
+        <item>My string 44</item>
+        <item>My string 444</item>
+        <item>My string 4444</item>
     </string-array>
+
+    <string-array name="recycler_data123">
+        <item>@drawable/wizard_0</item>
+        <item>My string 11</item>
+        <item>My string 111</item>
+        <item>My string 1111</item>
+        <item>My string 2</item>
+        <item>My string 22</item>
+        <item>My string 222</item>
+        <item>My string 2222</item>
+        <item>My string 3</item>
+        <item>My string 33</item>
+        <item>My string 333</item>
+        <item>My string 3333</item>
+        <item>My string 4</item>
+        <item>My string 44</item>
+        <item>My string 444</item>
+        <item>My string 4444</item>
+    </string-array>
+
+
+
 
 
 
