@@ -34,8 +34,8 @@ import java.util.Locale;
 
 public class LR1SecondActivity extends AppCompatActivity {
 
+
     private DrawerLayout mDrawerLayout;
-    private FusedLocationProviderClient mFusedLocationClient;
     private String locationCur="";
 
     @Override
@@ -44,27 +44,7 @@ public class LR1SecondActivity extends AppCompatActivity {
         setContentView(R.layout.activity_lr1_second);
 
 
-        if (ActivityCompat.checkSelfPermission(this,
-                Manifest.permission.ACCESS_FINE_LOCATION) !=
-                PackageManager.PERMISSION_GRANTED) {
-            if (!ActivityCompat.shouldShowRequestPermissionRationale(this,
-                    Manifest.permission.ACCESS_FINE_LOCATION)) {
-                ActivityCompat.requestPermissions(this,
-                        new
-                                String[]{Manifest.permission.ACCESS_FINE_LOCATION},
-                        1);
 
-                Log.i("Location permission", "some text not started location");
-            }
-            else {
-                Log.i("Location permission", "some text");
-                getLocation();
-            }
-        }
-        mFusedLocationClient =
-                LocationServices.getFusedLocationProviderClient(this);
-
-        getLocation();
 
 
 //        mRecyclerView = findViewById(R.id.my_recycler_view);
@@ -131,11 +111,11 @@ public class LR1SecondActivity extends AppCompatActivity {
                                         fragmentManager.beginTransaction();
 
                                 fragment = new lab02Fragment2();
-                                if(!locationCur.equals("")) {
-                                    args = new Bundle();
-                                    args.putString("abc", locationCur);
-                                    fragment.setArguments(args);
-                                }
+//                                if(!locationCur.equals("")) {
+//                                    args = new Bundle();
+//                                    args.putString("abc", locationCur);
+//                                    fragment.setArguments(args);
+//                                }
                                 fragmentTransaction.replace(R.id.fragmentPos, fragment);
                                 fragmentTransaction.addToBackStack(null);
                                 fragmentTransaction.commit();
@@ -182,63 +162,6 @@ public class LR1SecondActivity extends AppCompatActivity {
                 });
     }
 
-    @Override
-    public void onRequestPermissionsResult(int requestCode,
-                                           String permissions[], int[]
-                                                   grantResults) {
-        if (grantResults.length > 0
-                && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
 
-            Log.i("Location permission", "Access success!");
-            getLocation();
-        } else {
-            Log.i("Location permission", "Access denied!");
-        }
-    }
-
-    @SuppressLint("MissingPermission")
-    private void getLocation(){
-        String loc;
-        mFusedLocationClient.getLastLocation()
-                .addOnSuccessListener(this, new
-                        OnSuccessListener<Location>() {
-                            @Override
-                            public void onSuccess(Location location) {
-                                Log.i("Location","started!");
-                                if (location != null) {
-                                    Log.i("Location","success!");
-                                    Geocoder geocoder = new Geocoder(getBaseContext(),
-                                            Locale.getDefault());
-                                    try {
-                                        Address address =
-                                                geocoder.getFromLocation(location.getLatitude(),
-                                                        location.getLongitude(), 1).get(0);
-                                        Log.i("Location", "my location is " +
-                                                address.getLocality());
-
-                                        locationCur = address.getLocality();
-
-
-                                    } catch (IOException e) {
-
-                                        Log.i("Location","error!");
-                                        e.printStackTrace();
-                                    }
-                                }
-                            }
-                        })
-                .addOnFailureListener(this, new
-                        OnFailureListener() {
-                            @Override
-                            public void onFailure(@NonNull Exception e) {
-                                Log.i("Location","failed!");
-                            }
-                        }).addOnCompleteListener(this, new OnCompleteListener<Location>() {
-            @Override
-            public void onComplete(@NonNull Task<Location> task) {
-                Log.i("Location","complete!");
-            }
-        });
-    }
 }
 
