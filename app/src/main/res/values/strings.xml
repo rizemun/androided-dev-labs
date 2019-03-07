@@ -13,43 +13,66 @@
     <string name="about_title">Погода</string>
     <string name="about_version">Версия приложения: v.0.3beta</string>
     <string name="about_author">Имя автора: Markin Artem</string>
+    <string name="country">Россия</string>
 
     <string-array name="recycler_data">
-        <item>My string 1</item>
-        <item>My string 11</item>
-        <item>My string 111</item>
-        <item>My string 1111</item>
-        <item>My string 2</item>
-        <item>My string 22</item>
-        <item>My string 222</item>
-        <item>My string 2222</item>
-        <item>My string 3</item>
-        <item>My string 33</item>
-        <item>My string 333</item>
-        <item>My string 3333</item>
-        <item>My string 4</item>
-        <item>My string 44</item>
-        <item>My string 444</item>
-        <item>My string 4444</item>
+        <item>Москва</item>
+        <item>Санкт Петербург</item>
+        <item>Воронеж</item>
+        <item>Волгоград</item>
+        <item>Кисловодск</item>
+        <item>Пятигорск</item>
+        <item>Электросталь</item>
+        <item>Нижний Новгород</item>
+        <item>Ростов на Дону</item>
+        <item>Таганрог</item>
+
+        <item>Нью-Йорк</item>
+        <item>Париж</item>
+        <item>Псков</item>
+        <item>Вашингтон</item>
+        <item>Сыктывкар</item>
+        <item>Екатеринбург</item>
+        <item>Калуга</item>
+        <item>Бор</item>
+        <item>Рязань</item>
+        <item>Канны</item>
+
+        <item>Бийск</item>
+        <item>Асбест</item>
+        <item>Химки</item>
+        <item>Марсель</item>
+        <item>Чебоксары</item>
     </string-array>
 
-    <string-array name="recycler_data123">
-        <item>@drawable/wizard_0</item>
-        <item>My string 11</item>
-        <item>My string 111</item>
-        <item>My string 1111</item>
-        <item>My string 2</item>
-        <item>My string 22</item>
-        <item>My string 222</item>
-        <item>My string 2222</item>
-        <item>My string 3</item>
-        <item>My string 33</item>
-        <item>My string 333</item>
-        <item>My string 3333</item>
-        <item>My string 4</item>
-        <item>My string 44</item>
-        <item>My string 444</item>
-        <item>My string 4444</item>
+    <string-array name="countries">
+        <item>Россия</item>
+        <item>Россия</item>
+        <item>Россия</item>
+        <item>Россия</item>
+        <item>Россия</item>
+        <item>Россия</item>
+        <item>Россия</item>
+        <item>Россия</item>
+        <item>Россия</item>
+        <item>Россия</item>
+
+        <item>США</item>
+        <item>Франция</item>
+        <item>Россия</item>
+        <item>США</item>
+        <item>Россия</item>
+        <item>Россия</item>
+        <item>Россия</item>
+        <item>Россия</item>
+        <item>Россия</item>
+        <item>Франция</item>
+
+        <item>Россия</item>
+        <item>Россия</item>
+        <item>Россия</item>
+        <item>Франция</item>
+        <item>Россия</item>
     </string-array>
 
 

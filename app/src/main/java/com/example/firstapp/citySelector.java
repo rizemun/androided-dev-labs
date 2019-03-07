@@ -50,9 +50,12 @@ public class citySelector extends Fragment {
         mRecyclerView.setLayoutManager(mLayoutManager);
 
         String[] myString = getResources().getStringArray(R.array.recycler_data);
-        List<String> recyclerData = Arrays.asList(myString);
+        String[] countriesArr = getResources().getStringArray(R.array.countries);
 
-        mAdapter = new MyRecyclerViewAdapter(recyclerData);
+        List<String> recyclerData = Arrays.asList(myString);
+        List<String> countries = Arrays.asList(countriesArr);
+
+        mAdapter = new MyRecyclerViewAdapter(recyclerData, countries);
 
         mRecyclerView.setAdapter(mAdapter);
 

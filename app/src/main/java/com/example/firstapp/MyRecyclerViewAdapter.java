@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.List;
@@ -14,14 +15,19 @@ import java.util.List;
 public class MyRecyclerViewAdapter extends
         RecyclerView.Adapter<MyRecyclerViewAdapter.MyViewHolder> {
     private List<String> mDataset;
+    private List<String> countries;
 
     public static class MyViewHolder extends RecyclerView.ViewHolder {
 
         public TextView mTextView;
+        public TextView mCountryView;
+        public ImageView mFlagView;
 
         public MyViewHolder(View v) {
             super(v);
             mTextView = v.findViewById(R.id.my_text_view);
+            mCountryView = v.findViewById(R.id.country);
+            mFlagView = v.findViewById(R.id.flag);
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -31,8 +37,9 @@ public class MyRecyclerViewAdapter extends
         }
     }
 
-    public MyRecyclerViewAdapter(List<String> myDataset) {
+    public MyRecyclerViewAdapter(List<String> myDataset, List<String> myCountriesSet) {
         mDataset = myDataset;
+        countries = myCountriesSet;
     }
 
     @Override
@@ -48,29 +55,32 @@ public class MyRecyclerViewAdapter extends
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
         String text = mDataset.get(position);
-        String text2 = mDataset1.get(position);
-        String text3 = mDataset1.get(position);
-
-
+        String countryText = countries.get(position);
 
 
         holder.mTextView.setText(text);
-        holder.mTextView2.setText(text2);
-        holder.mTextView3.setText(text3);
+        holder.mCountryView.setText(countryText);
 
 
-
-        if(text.length() <= 11) {
-            holder.mTextView.setTextColor(Color.parseColor("green"));
+        switch (countryText) {
+            case "Россия":
+                holder.mFlagView.setImageResource(R.drawable.russia);
+                break;
+            case "Франция":
+                holder.mFlagView.setImageResource(R.drawable.france);
+                break;
+            case "США":
+                holder.mFlagView.setImageResource(R.drawable.usa);
+                break;
         }
-        else if(text.length() == 12) {
+
+
+        if (text.length() >= 1 && text.length() <= 5) {
             holder.mTextView.setTextColor(Color.parseColor("blue"));
-        }
-        else if(text.length() == 13) {
+        } else if (text.length() >= 6 && text.length() <= 7) {
             holder.mTextView.setTextColor(Color.parseColor("red"));
-        }
-        else if(text.length() == 14) {
-            holder.mTextView.setTextColor(Color.parseColor("purple"));
+        } else if (text.length() > 7) {
+            holder.mTextView.setTextColor(Color.parseColor("#2F674E"));
         }
     }
 

@@ -6,12 +6,6 @@
     tools:context=".citySelector">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:id="@+id/frag"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
-
     <android.support.v7.widget.RecyclerView
         android:id="@+id/my_recycler_view"
         android:layout_width="match_parent"

@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">FirstApp</string>
+    <string name="title_activity_main2">Main2Activity</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="h1">Hello blank fragmentU+00B2;²</string>
+    <string name="weather_temp">Температура -2°С</string>
+    <string name="weather_press">Давление: 745 мм рт.ст.</string>
+    <string name="weather_wind">Ветер: 3м/с</string>
+
+
+    <string name="about_title">Погода</string>
+    <string name="about_version">Версия приложения: v.0.3beta</string>
+    <string name="about_author">Имя автора: Markin Artem</string>
+
+    <string-array name="recycler_data">
+        <item>Москва</item>
+        <item>Санкт Петербург</item>
+        <item>Воронеж</item>
+        <item>Алматы</item>
+        <item>Кисловодск</item>
+        <item>Пятигорск</item>
+        <item>Электросталь</item>
+        <item>Нижний Новгород</item>
+        <item>Ростов на Дону</item>
+        <item>Таганрог</item>
+
+        <item>Нью-Йорк</item>
+        <item>Париж</item>
+        <item>Псков</item>
+        <item>Одесса</item>
+        <item>Сыктывкар</item>
+        <item>Екатеринбург</item>
+        <item>Калуга</item>
+        <item>Бор</item>
+        <item>Рязань</item>
+        <item>Канны</item>
+
+        <item>Бийск</item>
+        <item>Асбест</item>
+        <item>Химки</item>
+        <item>Марсель</item>
+        <item>Чебоксары</item>
+    </string-array>
+
+
+
+
+
+
+</resources>

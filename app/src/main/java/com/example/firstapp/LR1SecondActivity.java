@@ -35,10 +35,8 @@ import java.util.Locale;
 public class LR1SecondActivity extends AppCompatActivity {
 
     private DrawerLayout mDrawerLayout;
-    private RecyclerView mRecyclerView;
-    private RecyclerView.LayoutManager mLayoutManager;
-    private RecyclerView.Adapter mAdapter;
     private FusedLocationProviderClient mFusedLocationClient;
+    private String locationCur="";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -109,7 +107,7 @@ public class LR1SecondActivity extends AppCompatActivity {
                     public boolean onNavigationItemSelected(MenuItem menuItem) {
                         FragmentManager fragmentManager;
                         FragmentTransaction fragmentTransaction;
-                        //Bundle args;
+                        Bundle args;
                         Fragment fragment;
 
                         switch (menuItem.getItemId()) {
@@ -132,11 +130,12 @@ public class LR1SecondActivity extends AppCompatActivity {
                                 fragmentTransaction =
                                         fragmentManager.beginTransaction();
 
-//                            args = new Bundle();
-//                            args.putString("color", "green");
                                 fragment = new lab02Fragment2();
-//                            fragment.setArguments(args);
-
+                                if(!locationCur.equals("")) {
+                                    args = new Bundle();
+                                    args.putString("abc", locationCur);
+                                    fragment.setArguments(args);
+                                }
                                 fragmentTransaction.replace(R.id.fragmentPos, fragment);
                                 fragmentTransaction.addToBackStack(null);
                                 fragmentTransaction.commit();
@@ -199,7 +198,7 @@ public class LR1SecondActivity extends AppCompatActivity {
 
     @SuppressLint("MissingPermission")
     private void getLocation(){
-
+        String loc;
         mFusedLocationClient.getLastLocation()
                 .addOnSuccessListener(this, new
                         OnSuccessListener<Location>() {
@@ -216,6 +215,10 @@ public class LR1SecondActivity extends AppCompatActivity {
                                                         location.getLongitude(), 1).get(0);
                                         Log.i("Location", "my location is " +
                                                 address.getLocality());
+
+                                        locationCur = address.getLocality();
+
+
                                     } catch (IOException e) {
 
                                         Log.i("Location","error!");

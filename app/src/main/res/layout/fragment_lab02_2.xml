@@ -3,14 +3,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bgFrag2"
     tools:context=".lab02Fragment2">
 
-    <!-- TODO: Update blank fragment layout -->+
-    <TextView
-        android:id="@+id/frag"
+    <!-- TODO: Update blank fragment layout -->
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/my_recycler_view2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        tools:listitem="@layout/recycler_view_item" />
+
 
 </FrameLayout>
